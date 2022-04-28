@@ -35,10 +35,10 @@ const Login = () => {
 
                 <div className="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
 
-                    <img className='w-32 mx-auto' src={logo} alt="" />
-                    <h1 className="font-semibold text-center text-xl mb-5">USER LOGIN</h1>
+                    <div className="bg-white  border-2 w-full rounded-lg  shadow-2xl">
 
-                    <div className="bg-white  border-2 w-full rounded-lg divide-y divide-gray-200 shadow-2xl">
+                        <img className='w-32 mx-auto mt-5' src={logo} alt="" />
+                        <h1 className="font-semibold text-center text-xl">USER LOGIN</h1>
 
                         <form onSubmit={handleLogin} className="px-5 py-7">
 
