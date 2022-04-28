@@ -52,7 +52,7 @@ const Login = () => {
 
                         </form>
 
-                        <div className="p-5">
+                        <div className="px-5">
 
                             <p className='text-center text-sm text-gray-400 mb-2'>Continue with</p>
 
