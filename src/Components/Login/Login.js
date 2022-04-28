@@ -1,9 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../Assets/logo.png';
 import { FcGoogle } from 'react-icons/fc'
 import { GrApple } from 'react-icons/gr'
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase/firebase.init';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+    if (error) {
+        return (
+            <div>
+                <p>Error: {error.message}</p>
+            </div>
+        );
+    }
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+    if (user) {
+        return (
+            <div>
+                <p>Registered User: {user.email}</p>
+            </div>
+        );
+    }
+
+    const handleLogin = event => {
+
+        event.preventDefault();
+
+    }
+
     return (
         <div>
 
@@ -16,20 +53,15 @@ const Login = () => {
 
                     <div className="bg-white  border-2 w-full rounded-lg divide-y divide-gray-200 shadow-2xl">
 
-                        <form className="px-5 py-7">
+                        <form onSubmit={handleLogin} className="px-5 py-7">
 
                             <label className="font-semibold text-sm text-gray-600 pb-1 block">E-mail</label>
-                            <input type="email" className="outline-none border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50" />
+                            <input onChange={(e) => setEmail(e.target.value)} type="email" className="outline-none border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50" />
 
                             <label className="font-semibold text-sm text-gray-600 pb-1 block">Password</label>
-                            <input type="password" className="outline-none border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50" />
+                            <input onChange={(e) => setPassword(e.target.value)} type="password" className="outline-none border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50" />
 
-                            <button type="button" className="transition duration-200 bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
-                                <span className="inline-block mr-2">Login</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-4 h-4 inline-block">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                            </button>
+                            <input onClick={() => createUserWithEmailAndPassword(email, password)} type="submit" value="Login" className="transition duration-200 bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block" />
 
                         </form>
 
@@ -64,11 +96,13 @@ const Login = () => {
 
                                 <div className="text-center sm:text-right whitespace-wrap">
 
-                                    <button className="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset">
+                                    <Link to='/signup'>
+                                        <button className="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset">
 
-                                        <span className="inline-block ml-1">Create new account</span>
+                                            <span className="inline-block ml-1">Create new account</span>
 
-                                    </button>
+                                        </button>
+                                    </Link>
 
                                 </div>
 
