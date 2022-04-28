@@ -35,6 +35,8 @@ const Login = () => {
 
                         <div className="p-5">
 
+                            <p className='text-center text-sm text-gray-400 mb-2'>login with</p>
+
                             <div className="grid grid-cols-2 gap-1">
 
 
@@ -50,7 +52,7 @@ const Login = () => {
 
                             <div className="grid grid-cols-2 gap-1">
 
-                                <div className="text-center sm:text-left whitespace-nowrap">
+                                <div className="text-center sm:text-left whitespace-wrap">
 
                                     <button className="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset">
 
@@ -60,11 +62,11 @@ const Login = () => {
 
                                 </div>
 
-                                <div className="text-center sm:text-right whitespace-nowrap">
+                                <div className="text-center sm:text-right whitespace-wrap">
 
                                     <button className="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset">
 
-                                        <span className="inline-block ml-1">Create account</span>
+                                        <span className="inline-block ml-1">Create new account</span>
 
                                     </button>
 
