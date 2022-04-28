@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from '../../Assets/logo.png';
+import { FcGoogle } from 'react-icons/fc'
+import { GrApple } from 'react-icons/gr'
 
 const Login = () => {
     return (
@@ -36,9 +38,9 @@ const Login = () => {
                             <div class="grid grid-cols-2 gap-1">
 
 
-                                <button type="button" class="transition duration-200 border border-gray-200 text-gray-500 w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-normal text-center inline-block">Google</button>
+                                <button type="button" class="transition duration-200 border border-gray-200 text-gray-500 w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-normal text-center flex items-center justify-center"><FcGoogle style={{ fontSize: "25px", marginRight: "5px" }} />Google</button>
 
-                                <button type="button" class="transition duration-200 border border-gray-200 text-gray-500 w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-normal text-center inline-block">Apple</button>
+                                <button type="button" class="transition duration-200 border border-gray-200 text-gray-500 w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-normal text-center  flex items-center justify-center"><GrApple style={{ fontSize: "25px", marginRight: "5px", color: "black" }} />Apple</button>
 
                             </div>
 
