@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../../Assets/logo.png';
 
 const Navbar = () => {
@@ -22,13 +23,15 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="order-2 md:order-3">
-                        <button className="px-4 py-2 focus:ring-blue-300 bg-blue-600 hover:bg-blue-700 text-gray-50 rounded-xl flex items-center gap-2">
+                        <NavLink to='/login'>
+                            <button className="px-4 py-2 focus:ring-blue-300 bg-blue-600 hover:bg-blue-700 text-gray-50 rounded-xl flex items-center gap-2">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fillRule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
-                            <span>Login</span>
-                        </button>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fillRule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clipRule="evenodd" />
+                                </svg>
+                                <span>Login</span>
+                            </button>
+                        </NavLink>
                     </div>
                 </div>
             </nav>
