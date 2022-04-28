@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Footer from './Components/Footer/Footer';
 import ForgetPass from './Components/ForgetPass/ForgetPass';
@@ -20,6 +22,7 @@ function App() {
         <Route path='/reset-password' element={<ForgetPass></ForgetPass>}></Route>
       </Routes>
 
+      <ToastContainer></ToastContainer>
       <Footer></Footer>
     </div>
   );

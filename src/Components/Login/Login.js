@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import logo from '../../Assets/logo.png';
 import { FcGoogle } from 'react-icons/fc'
-import { GrApple } from 'react-icons/gr'
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase/firebase.init';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
     const [
         createUserWithEmailAndPassword,
         user,
@@ -17,23 +19,8 @@ const Login = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    if (error) {
-        return (
-            <div>
-                <p>Error: {error.message}</p>
-            </div>
-        );
-    }
-    if (loading) {
-        return <p>Loading...</p>;
-    }
-    if (user) {
-        return (
-            <div>
-                <p>Registered User: {user.email}</p>
-            </div>
-        );
-    }
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+
 
     const handleLogin = event => {
 
@@ -67,14 +54,13 @@ const Login = () => {
 
                         <div className="p-5">
 
-                            <p className='text-center text-sm text-gray-400 mb-2'>login with</p>
+                            <p className='text-center text-sm text-gray-400 mb-2'>Continue with</p>
 
-                            <div className="grid grid-cols-2 gap-1">
+                            <div className="grid grid-cols-1 gap-1">
 
 
-                                <button type="button" className="transition duration-200 border border-gray-200 text-gray-500 w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-normal text-center flex items-center justify-center"><FcGoogle style={{ fontSize: "25px", marginRight: "5px" }} />Google</button>
+                                <button onClick={() => signInWithGoogle()} type="button" className="transition duration-200 border border-gray-200 text-gray-500 w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-normal text-center flex items-center justify-center"><FcGoogle style={{ fontSize: "25px", marginRight: "5px" }} />Google</button>
 
-                                <button type="button" className="transition duration-200 border border-gray-200 text-gray-500 w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-normal text-center  flex items-center justify-center"><GrApple style={{ fontSize: "25px", marginRight: "5px", color: "black" }} />Apple</button>
 
                             </div>
 
