@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import banner from '../../Assets/banner.jpeg';
-import Fade from 'react-reveal/Fade';
 import { BiWorld } from 'react-icons/bi';
+import { Slide } from 'react-reveal';
 
 const Banner = () => {
     return (
@@ -11,11 +11,11 @@ const Banner = () => {
                 <img className='w-full h-full object-cover absolute mix-blend-overlay' src={banner} alt="" />
                 <div className='flex items-center justify-center h-screen'>
                     <div>
-                        <Fade left>
+                        <Slide left>
                             <h1 className="text-center text-6xl text-white font-bold">Welcome to World's largest <br /> camera inventory</h1>
-                        </Fade>
+                        </Slide>
 
-                        <Fade right>
+                        <Slide right>
                             <h2 className='text-white text-center text-xl my-10'>Make sure you have the right equipment, and use it properly!</h2>
 
                             <Link to="/login">
@@ -23,7 +23,7 @@ const Banner = () => {
                                     Explore our inventory <BiWorld className='text-xl mt-1' />
                                 </button>
                             </Link>
-                        </Fade>
+                        </Slide>
 
                     </div>
                 </div>
