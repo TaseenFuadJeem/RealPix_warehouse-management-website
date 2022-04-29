@@ -13,9 +13,6 @@ const ForgetPass = () => {
     const [email, setEmail] = useState('');
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth);
 
-    // if (error?.message === "Firebase: Error (auth/missing-email).") {
-    //     toast.error("Please enter your E-mail then reset your password");
-    // }
 
     const customStyles = {
         content: {
@@ -26,7 +23,8 @@ const ForgetPass = () => {
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
             borderRadius: '20px',
-            backgroundColor: '#1F2937',
+            border: "6px solid #5EA4FA",
+            backgroundColor: '#2563EB',
             padding: "35px",
 
         },
@@ -70,7 +68,7 @@ const ForgetPass = () => {
                                 <form onSubmit={handleResetPass} className="px-5 pt-7">
 
                                     <label className="font-semibold text-sm text-gray-600 pb-1 block">Your existing e-mail</label>
-                                    <input onChange={(e) => setEmail(e.target.value)} type="email" className="outline-none border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50" required />
+                                    <input onChange={(e) => setEmail(e.target.value)} type="email" className="outline-none border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50" />
 
                                     <input onClick={openModal} type="submit" value="Reset Password" className="transition duration-200 bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block" />
 
