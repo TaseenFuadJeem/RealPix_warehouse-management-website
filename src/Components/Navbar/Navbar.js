@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../Assets/logo.png';
 import auth from '../../firebase/firebase.init';
 import Modal from 'react-modal';
@@ -54,11 +54,11 @@ const Navbar = () => {
                     </div>
                     <div className="text-gray-500 order-3 w-full md:w-auto md:order-2">
                         <ul className="flex font-semibold justify-between">
-                            <li className="md:px-4 md:py-2 hover:text-blue-600"><a href="/">Dashboard</a></li>
-                            <li className="md:px-4 md:py-2 hover:text-blue-600"><a href="/">Search</a></li>
-                            <li className="md:px-4 md:py-2 hover:text-blue-600"><a href="/">Explore</a></li>
-                            <li className="md:px-4 md:py-2 hover:text-blue-600"><a href="/">About</a></li>
-                            <li className="md:px-4 md:py-2 hover:text-blue-600"><a href="/">Contact</a></li>
+                            <li className="md:px-4 md:py-2 hover:text-blue-600"><NavLink to="/home">Home</NavLink></li>
+                            <li className="md:px-4 md:py-2 hover:text-blue-600"><NavLink to="/">Search</NavLink></li>
+                            <li className="md:px-4 md:py-2 hover:text-blue-600"><NavLink to="/">Explore</NavLink></li>
+                            <li className="md:px-4 md:py-2 hover:text-blue-600"><NavLink to="/">About</NavLink></li>
+                            <li className="md:px-4 md:py-2 hover:text-blue-600"><NavLink to="/">Contact</NavLink></li>
                         </ul>
                     </div>
 
@@ -67,7 +67,7 @@ const Navbar = () => {
 
                             <div className="order-2 md:order-3">
 
-                                <button onClick={() => openModal()} className="px-4 py-2 focus:ring-blue-300 bg-blue-600 hover:bg-blue-700 text-gray-50 rounded-xl flex items-center gap-2">
+                                <button onClick={() => openModal} className="px-4 py-2 focus:ring-blue-300 bg-blue-600 hover:bg-blue-700 text-gray-50 rounded-xl flex items-center gap-2">
 
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                         <path fillRule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clipRule="evenodd" />
