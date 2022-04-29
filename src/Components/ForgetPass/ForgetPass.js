@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../Assets/logo.png';
 import { BiLeftArrowAlt } from 'react-icons/bi';
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
+import auth from '../../firebase/firebase.init';
 
 const ForgetPass = () => {
+
+    const [email, setEmail] = useState('');
+    const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth);
+
     return (
         <div>
 
@@ -19,9 +25,13 @@ const ForgetPass = () => {
                         <form className="px-5 pt-7">
 
                             <label className="font-semibold text-sm text-gray-600 pb-1 block">Your existing e-mail</label>
-                            <input type="email" className="outline-none border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50" required />
+                            <input onChange={(e) => setEmail(e.target.value)} type="email" className="outline-none border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50" required />
 
-                            <input type="submit" value="Reset Password" className="transition duration-200 bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block" />
+                            <input onClick={async () => {
+                                await sendPasswordResetEmail(email);
+                                alert('Sent email');
+                            }}
+                                type="submit" value="Reset Password" className="transition duration-200 bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block" />
 
                         </form>
 
