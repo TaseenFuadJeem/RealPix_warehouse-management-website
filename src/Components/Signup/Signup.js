@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../Assets/logo.png';
 import { FcGoogle } from 'react-icons/fc';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase/firebase.init';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
 
@@ -16,7 +17,20 @@ const Signup = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+
+    const navigate = useNavigate();
+
+    if (user || googleUser) {
+        navigate("/home");
+        toast.success("Your account created successfully!")
+    }
+
+    if (error || googleError) {
+        toast.error(`${googleError?.message || error.message}`);
+        return;
+    }
 
     const handleSignup = event => {
 
