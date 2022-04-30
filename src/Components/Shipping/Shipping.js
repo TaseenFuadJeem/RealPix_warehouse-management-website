@@ -7,7 +7,7 @@ const Shipping = () => {
     return (
         <div className='lg:px-32'>
             <h1 className='text-center text-4xl font-semibold my-10'>World wide shipping</h1>
-            <div className='grid lg:grid-cols-2 gap-4 mt-24'>
+            <div className='grid lg:grid-cols-2 gap-4 my-24'>
                 <Slide left>
                     <div>
                         <img className='w-full mx-auto' src={shipping} alt="" />
