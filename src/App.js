@@ -9,6 +9,7 @@ import InvalidPage from './Components/InvalidPage/InvalidPage';
 import Inventory from './Components/Inventory/Inventory';
 import Login from './Components/Login/Login';
 import Navbar from './Components/Navbar/Navbar';
+import ScrollButton from './Components/ScrollButton/ScrollButton';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 import Signup from './Components/Signup/Signup';
 
@@ -29,6 +30,7 @@ function App() {
         </Routes>
       </ScrollToTop>
 
+      <ScrollButton></ScrollButton>
       <ToastContainer></ToastContainer>
       <Footer></Footer>
     </div>
