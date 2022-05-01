@@ -6,6 +6,7 @@ import Footer from './Components/Footer/Footer';
 import ForgetPass from './Components/ForgetPass/ForgetPass';
 import Home from './Components/Home/Home';
 import InvalidPage from './Components/InvalidPage/InvalidPage';
+import Inventory from './Components/Inventory/Inventory';
 import Login from './Components/Login/Login';
 import Navbar from './Components/Navbar/Navbar';
 import Signup from './Components/Signup/Signup';
@@ -21,6 +22,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/reset-password' element={<ForgetPass></ForgetPass>}></Route>
+        <Route path='/inventory' element={<Inventory></Inventory>}></Route>
         <Route path='*' element={<InvalidPage></InvalidPage>}></Route>
       </Routes>
 

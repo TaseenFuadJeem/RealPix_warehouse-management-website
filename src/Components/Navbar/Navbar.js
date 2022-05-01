@@ -56,7 +56,7 @@ const Navbar = () => {
                     <div className="text-gray-500 order-3 w-full md:w-auto md:order-2">
                         <ul className="flex font-semibold justify-between">
                             <li className="md:px-4 md:py-2 hover:text-blue-600"><NavLink to="/home">Home</NavLink></li>
-                            <li className="md:px-4 md:py-2 hover:text-blue-600"><NavLink to="/">Search</NavLink></li>
+                            <li className="md:px-4 md:py-2 hover:text-blue-600"><NavLink to="/inventory">Inventory</NavLink></li>
                             <li className="md:px-4 md:py-2 hover:text-blue-600"><NavLink to="/">Explore</NavLink></li>
                             <li className="md:px-4 md:py-2 hover:text-blue-600"><NavLink to="/">About</NavLink></li>
                             <li className="md:px-4 md:py-2 hover:text-blue-600"><NavLink to="/">Contact</NavLink></li>
