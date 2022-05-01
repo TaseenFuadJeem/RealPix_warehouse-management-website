@@ -18,7 +18,7 @@ const Banner = () => {
                         <Slide right>
                             <h2 className='text-white text-center text-xl my-10'>Make sure you have the right equipment, and use it properly!</h2>
 
-                            <Link to="/login">
+                            <Link to="/inventory">
                                 <button className="relative px-4 py-2 mb-32 mt-5 mx-auto focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 bg-blue-600 hover:bg-blue-700 text-gray-50 rounded-xl flex items-center gap-2 ">
                                     Explore our inventory <BiWorld className='text-xl mt-1' />
                                 </button>

@@ -13,6 +13,17 @@ const ForgetPass = () => {
     const [email, setEmail] = useState('');
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth);
 
+    const errorMessage = () => {
+        if (error?.message === "Firebase: Error(auth / user - not - found)." || error === undefined) {
+            toast.error("User not found. Please check the email and try again.")
+            closeModal();
+        } else {
+
+            toast.success('Sent reset link. Check your E-mail');
+            closeModal();
+        }
+    }
+    console.log(error?.message);
 
     const customStyles = {
         content: {
@@ -88,13 +99,10 @@ const ForgetPass = () => {
                                     <div className='flex justify-evenly mt-10'>
 
                                         <button className="border border-white text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-white hover:text-black focus:outline-none focus:shadow-outline" onClick={async () => {
-                                            if (error || email === "") {
-                                                toast.error('Please enter your E-mail then reset your password')
-                                            }
-                                            else {
-                                                await sendPasswordResetEmail(email);
-                                                toast.success('Sent reset link. Check your E-mail');
-                                            }
+
+                                            errorMessage()
+                                            await sendPasswordResetEmail(email);
+
                                         }} >Yes!!</button>
 
                                         <button className="border border-white text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-white hover:text-black focus:outline-none focus:shadow-outline" onClick={closeModal}>cancel</button>

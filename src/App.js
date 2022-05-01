@@ -15,10 +15,11 @@ import Signup from './Components/Signup/Signup';
 
 function App() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar></Navbar>
 
       <ScrollToTop>
+
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/home' element={<Home></Home>}></Route>
@@ -28,6 +29,7 @@ function App() {
           <Route path='/inventory' element={<Inventory></Inventory>}></Route>
           <Route path='*' element={<InvalidPage></InvalidPage>}></Route>
         </Routes>
+
       </ScrollToTop>
 
       <ScrollButton></ScrollButton>

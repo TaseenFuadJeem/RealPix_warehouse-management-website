@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ProductForHome from '../ProductForHome/ProductForHome';
+import { FaArrowCircleRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const HalfInventory = () => {
 
@@ -29,7 +31,7 @@ const HalfInventory = () => {
                             <h2 className="font-semibold text-gray-800 text-center">Available Products in inventory</h2>
                         </header>
                         <div className="p-3">
-                            <div className=" overflow-hidden">
+                            <div className=" overflow-y-hidden">
                                 <table className="table-auto w-full">
                                     <thead className="text-xs font-semibold uppercase text-gray-800 bg-gray-300">
                                         <tr>
@@ -62,6 +64,15 @@ const HalfInventory = () => {
                         </div>
                     </div>
                 </div>
+
+                <Link to="/inventory">
+                    <div className='flex justify-center mt-5'>
+                        <button className="mx-auto transition duration-200 bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white px-5 py-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center">
+                            Show all <FaArrowCircleRight className='inline-block ml-2 mb-1' />
+                        </button>
+                    </div>
+                </Link>
+
             </section>
 
 

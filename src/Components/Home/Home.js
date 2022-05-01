@@ -1,4 +1,5 @@
 import React from 'react';
+import './Home.css';
 import Address from '../Address/Address';
 import Banner from '../Banner/Banner';
 import Category from '../Category/Category';
@@ -10,11 +11,13 @@ const Home = () => {
     return (
         <>
             <Banner></Banner>
-            <Category></Category>
-            <HalfInventory></HalfInventory>
-            <Shipping></Shipping>
-            <Address></Address>
-            <Faq></Faq>
+            <div className="mobile-dev">
+                <Category></Category>
+                <HalfInventory></HalfInventory>
+                <Shipping></Shipping>
+                <Address></Address>
+                <Faq></Faq>
+            </div>
         </>
     );
 };
