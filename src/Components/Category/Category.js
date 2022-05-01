@@ -11,7 +11,7 @@ const Category = () => {
     return (
         <div className='my-32 lg:px-32 sm:px-5'>
 
-            <h1 className='text-center text-3xl font-semibold my-5'>SHOP BY CATEGORY</h1>
+            <h1 className='text-center text-4xl font-semibold my-5'>Categories</h1>
 
             <div className='grid lg:grid-cols-3 gap-3'>
 

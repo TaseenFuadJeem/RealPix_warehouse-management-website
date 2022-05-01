@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Navbar.css";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import { Link, NavLink } from 'react-router-dom';
