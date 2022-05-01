@@ -57,7 +57,7 @@ const ForgetPass = () => {
                     :
 
                     <div className="min-h-screen flex flex-col justify-center sm:py-12 bg-cover bg-no-repeat" style={{
-                        backgroundImage: "url('https://i.ibb.co/F5ZTJdb/ezgif-com-gif-maker-1.gif)"
+                        backgroundImage: "url('https://i.ibb.co/F5ZTJdb/ezgif-com-gif-maker-1.gif')"
                     }} >
 
                         <div className="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
