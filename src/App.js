@@ -9,6 +9,7 @@ import InvalidPage from './Components/InvalidPage/InvalidPage';
 import Inventory from './Components/Inventory/Inventory';
 import Login from './Components/Login/Login';
 import Navbar from './Components/Navbar/Navbar';
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 import Signup from './Components/Signup/Signup';
 
 function App() {
@@ -16,15 +17,17 @@ function App() {
     <div>
       <Navbar></Navbar>
 
-      <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/signup' element={<Signup></Signup>}></Route>
-        <Route path='/reset-password' element={<ForgetPass></ForgetPass>}></Route>
-        <Route path='/inventory' element={<Inventory></Inventory>}></Route>
-        <Route path='*' element={<InvalidPage></InvalidPage>}></Route>
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path='/' element={<Home></Home>}></Route>
+          <Route path='/home' element={<Home></Home>}></Route>
+          <Route path='/login' element={<Login></Login>}></Route>
+          <Route path='/signup' element={<Signup></Signup>}></Route>
+          <Route path='/reset-password' element={<ForgetPass></ForgetPass>}></Route>
+          <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+          <Route path='*' element={<InvalidPage></InvalidPage>}></Route>
+        </Routes>
+      </ScrollToTop>
 
       <ToastContainer></ToastContainer>
       <Footer></Footer>

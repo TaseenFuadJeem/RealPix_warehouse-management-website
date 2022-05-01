@@ -18,7 +18,7 @@ const Category = () => {
                 <Fade left>
                     <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-4">
 
-                        <img className="w-full h-56 rounded-lg object-cover object-center border-4" src={cat3} alt="avatar" />
+                        <img className="w-full h-56 rounded-lg object-cover object-center border-4 p-5" src={cat3} alt="avatar" />
 
                         <div className="flex items-center px-6 py-3 bg-blue-600">
 
@@ -32,7 +32,7 @@ const Category = () => {
                 <Fade top>
                     <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-4">
 
-                        <img className="w-full h-56 rounded-lg object-cover object-center border-4" src={cat5} alt="avatar" />
+                        <img className="w-full h-56 rounded-lg object-cover object-center border-4 p-5" src={cat5} alt="avatar" />
 
                         <div className="flex items-center px-6 py-3 bg-blue-600">
 
@@ -46,7 +46,7 @@ const Category = () => {
                 <Fade right>
                     <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-4">
 
-                        <img className="w-full h-56 rounded-lg object-cover object-center border-4" src={cat4} alt="avatar" />
+                        <img className="w-full h-56 rounded-lg object-cover object-center border-4 p-5" src={cat4} alt="avatar" />
 
                         <div className="flex items-center px-6 py-3 bg-blue-600">
 
@@ -64,7 +64,7 @@ const Category = () => {
                 <Fade left>
                     <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-4">
 
-                        <img className="w-full h-56 rounded-lg object-cover object-center border-4" src={cat1} alt="avatar" />
+                        <img className="w-full h-56 rounded-lg object-cover object-center border-4 p-5" src={cat1} alt="avatar" />
 
                         <div className="flex items-center px-6 py-3 bg-blue-600">
 
@@ -78,7 +78,7 @@ const Category = () => {
                 <Fade bottom>
                     <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-4">
 
-                        <img className="w-full h-56 rounded-lg object-cover object-center border-4" src={cat2} alt="avatar" />
+                        <img className="w-full h-56 rounded-lg object-cover object-center border-4 p-5" src={cat2} alt="avatar" />
 
                         <div className="flex items-center px-6 py-3 bg-blue-600">
 
@@ -92,7 +92,7 @@ const Category = () => {
                 <Fade right>
                     <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-4">
 
-                        <img className="w-full h-56 rounded-lg object-cover object-center border-4" src={cat6} alt="avatar" />
+                        <img className="w-full h-56 rounded-lg object-cover object-center border-4 p-5" src={cat6} alt="avatar" />
 
                         <div className="flex items-center px-6 py-3 bg-blue-600">
 
