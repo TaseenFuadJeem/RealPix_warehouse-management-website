@@ -23,7 +23,6 @@ const ForgetPass = () => {
             closeModal();
         }
     }
-    console.log(error?.message);
 
     const customStyles = {
         content: {

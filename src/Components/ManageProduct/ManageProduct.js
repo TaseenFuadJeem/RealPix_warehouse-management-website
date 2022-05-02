@@ -1,12 +1,10 @@
 import React from 'react';
-import { Slide } from 'react-reveal';
-import { useNavigate } from 'react-router-dom';
 import { MdUpdate, MdDeleteForever } from 'react-icons/md';
 import { FaShippingFast } from 'react-icons/fa';
 import Modal from 'react-modal';
 import { toast } from 'react-toastify';
 
-const ManageProduct = ({ product }) => {
+const ManageProduct = ({ product, setProducts, products }) => {
     const { _id, img, name, seller, price, qnt, description } = product;
 
     const customStyles = {
@@ -44,7 +42,11 @@ const ManageProduct = ({ product }) => {
             method: 'DELETE'
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data);
+                const remaining = products.filter(p => p._id !== id);
+                setProducts(remaining);
+            })
     }
 
     return (

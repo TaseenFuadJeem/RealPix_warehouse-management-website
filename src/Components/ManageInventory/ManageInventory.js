@@ -34,6 +34,8 @@ const ManageInventory = () => {
                     products.map(product => <ManageProduct
                         key={product._id}
                         product={product}
+                        setProducts={setProducts}
+                        products={products}
                     ></ManageProduct>)
                 }
             </div>
