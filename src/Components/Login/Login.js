@@ -40,7 +40,8 @@ const Login = () => {
     }
 
     if (googleUser || user) {
-        navigate('/inventory');
+        navigate('/home');
+        toast.success("Login successful")
     }
 
     const handleLogin = event => {
