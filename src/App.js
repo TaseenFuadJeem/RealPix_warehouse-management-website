@@ -10,6 +10,7 @@ import Inventory from './Components/Inventory/Inventory';
 import Login from './Components/Login/Login';
 import Navbar from './Components/Navbar/Navbar';
 import ProductDetail from './Components/ProductDetail/ProductDetail';
+import RequireAuth from './Components/RequireAuth/RequireAuth';
 import ScrollButton from './Components/ScrollButton/ScrollButton';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 import Signup from './Components/Signup/Signup';
@@ -28,7 +29,10 @@ function App() {
           <Route path='/signup' element={<Signup></Signup>}></Route>
           <Route path='/reset-password' element={<ForgetPass></ForgetPass>}></Route>
           <Route path='/inventory' element={<Inventory></Inventory>}></Route>
-          <Route path='/inventory/:productId' element={<ProductDetail></ProductDetail>}></Route>
+          <Route path='/inventory/:productId' element={
+            <RequireAuth>
+              <ProductDetail></ProductDetail>
+            </RequireAuth>}></Route>
           <Route path='*' element={<InvalidPage></InvalidPage>}></Route>
         </Routes>
 
