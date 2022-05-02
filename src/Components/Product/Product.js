@@ -15,13 +15,13 @@ const Product = ({ product }) => {
         <Slide bottom>
             <div class="max-w-lg mx-auto">
                 <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mx-auto mb-5">
-                    <a href="/">
-                        <img class="rounded-t-lg mx-auto" src={img} alt="" />
-                    </a>
+
+                    <img class="rounded-t-lg mx-auto" src={img} alt="" />
+
                     <div class="p-5">
-                        <a href="/">
-                            <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">{name}</h5>
-                        </a>
+
+                        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">{name}</h5>
+
                         <p class="font-normal text-gray-700">Price : $ {price}</p>
                         <p class="font-normal text-gray-700">Seller : {seller}</p>
                         <p class="font-normal text-gray-700">Item left : {qnt}</p>
