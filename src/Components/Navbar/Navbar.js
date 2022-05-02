@@ -6,6 +6,7 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../../Assets/logo.png';
 import auth from '../../firebase/firebase.init';
 import Modal from 'react-modal';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
 
@@ -13,6 +14,7 @@ const Navbar = () => {
 
     const logout = () => {
         signOut(auth);
+        toast.success("Logout successful")
         closeModal();
     };
 

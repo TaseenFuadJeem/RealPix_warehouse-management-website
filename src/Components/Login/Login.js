@@ -40,7 +40,7 @@ const Login = () => {
     }
 
     if (googleUser || user) {
-        navigate('/home');
+        navigate('/inventory');
     }
 
     const handleLogin = event => {
