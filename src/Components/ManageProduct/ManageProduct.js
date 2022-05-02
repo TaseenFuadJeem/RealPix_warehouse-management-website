@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { MdUpdate, MdDeleteForever } from 'react-icons/md';
 import { FaShippingFast } from 'react-icons/fa';
 import Modal from 'react-modal';
+import { toast } from 'react-toastify';
 
 const ManageProduct = ({ product }) => {
     const { _id, img, name, seller, price, qnt, description } = product;
@@ -83,7 +84,11 @@ const ManageProduct = ({ product }) => {
 
                             <div className='flex justify-evenly mt-10'>
 
-                                <button className="border border-white text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-white hover:text-black focus:outline-none focus:shadow-outline" onClick={() => handleDelete(_id)} >Yes!!</button>
+                                <button className="border border-white text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-white hover:text-black focus:outline-none focus:shadow-outline" onClick={() => {
+                                    handleDelete(_id);
+                                    closeModal();
+                                    toast.success("Deleted successfully");
+                                }} >Yes!!</button>
 
                                 <button className="border border-white text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-white hover:text-black focus:outline-none focus:shadow-outline" onClick={closeModal}>cancel</button>
 
