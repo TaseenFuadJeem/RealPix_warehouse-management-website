@@ -14,8 +14,8 @@ const ForgetPass = () => {
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth);
 
     const errorMessage = () => {
-        if (error?.message === "Firebase: Error(auth / user - not - found)." || error === undefined) {
-            toast.error("User not found. Please check the email and try again.")
+        if (error) {
+            toast.error("Something went wrong. Please check the email and try again.")
             closeModal();
         } else {
 
@@ -73,7 +73,7 @@ const ForgetPass = () => {
 
                         <div className="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
 
-                            <div className="bg-white  border-2 w-full rounded-lg  shadow-2xl">
+                            <div className="bg-white border-2 w-full rounded-lg shadow-2xl">
 
                                 <img className='w-32 mx-auto mt-5' src={logo} alt="" />
                                 <h1 className="font-semibold text-center text-xl">RESET PASSWORD</h1>
