@@ -1,5 +1,5 @@
 import React from 'react';
-import shipping from '../../Assets/delivery.jpg';
+import shipping from '../../Assets/delivery.png';
 import { FaShippingFast } from 'react-icons/fa';
 import { Slide } from 'react-reveal';
 

@@ -1,9 +1,13 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
+    const navigate = useNavigate();
+
+
     const onSubmit = data => {
 
         const url = `http://localhost:5000/cam`;
@@ -22,14 +26,16 @@ const AddProduct = () => {
 
         reset();
 
-        toast.success("Data added successfully 😄")
+        toast.success("Data added successfully 😄");
+
+        navigate('/manage-inventory');
 
     };
 
 
     return (
         <div className='lg:px-32'>
-            <div className='md:w-4/5 mx-auto border-2 rounded-xl shadow-xl p-11 mb-36 mt-20'>
+            <div className='md:w-1/2 bg-white mx-auto border-2 rounded-xl shadow-xl p-11 mb-36 mt-20'>
                 <h1 className='text-center text-4xl font-semibold my-5 text-blue-600'>Add Product</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label className="font-semibold text-sm text-gray-600 pb-1 block">User name</label>

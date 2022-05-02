@@ -6,7 +6,7 @@ import {
     AccordionItemButton,
     AccordionItemPanel,
 } from 'react-accessible-accordion';
-import faq from '../../Assets/faq.jpg';
+import faq from '../../Assets/faq.png';
 
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';

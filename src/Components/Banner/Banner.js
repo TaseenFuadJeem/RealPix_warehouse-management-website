@@ -8,7 +8,7 @@ const Banner = () => {
     return (
         <div>
             <div className='w-full h-screen bg-cover bg-center relative overflow-hidden'>
-                <img className='w-full h-full object-cover absolute mix-blend-overlay' src={banner} alt="" />
+                <img className='w-full h-full object-cover absolute mix-blend-normal' src={banner} alt="" />
                 <div className='flex items-center justify-center h-screen'>
                     <div>
                         <Slide left>
