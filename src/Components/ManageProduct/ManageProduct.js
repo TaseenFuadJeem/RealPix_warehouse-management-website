@@ -1,6 +1,8 @@
 import React from 'react';
 import { Slide } from 'react-reveal';
 import { useNavigate } from 'react-router-dom';
+import { MdUpdate, MdDeleteForever } from 'react-icons/md';
+import { FaShippingFast } from 'react-icons/fa';
 
 const ManageProduct = ({ product }) => {
     const { _id, img, name, seller, price, qnt, description } = product;
@@ -26,11 +28,14 @@ const ManageProduct = ({ product }) => {
                     <p className="font-normal text-gray-700">Seller : {seller}</p>
                     <p className="font-normal text-gray-700">Item left : {qnt}</p>
                     <div className='flex justify-evenly'>
-                        <button className="text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
-                            Update
+                        <button className="text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center">
+                            Update <MdUpdate className='text-xl ml-1' />
                         </button>
                         <button className="text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
-                            Delete
+                            Delete <MdDeleteForever className='text-xl ml-1' />
+                        </button>
+                        <button className="text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
+                            Delivered <FaShippingFast className='text-xl ml-1' />
                         </button>
                     </div>
                 </div>
