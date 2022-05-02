@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
+import LoadingPage from '../LoadingPage/LoadingPage';
 
 const Inventory = () => {
 
@@ -17,16 +18,25 @@ const Inventory = () => {
 
     return (
         <div>
-            <h1 className='text-center text-4xl font-semibold my-5'>Our Inventory</h1>
-            <div className='grid lg:grid-cols-2 gap-8 lg:px-32 my-16'>
+            {
+                products.length === 0 ?
 
-                {
-                    products.map(product => <Product
-                        key={product._id}
-                        product={product}
-                    ></Product>)
-                }
-            </div>
+                    <LoadingPage></LoadingPage>
+
+                    :
+
+                    <>
+                        <h1 className='text-center text-4xl font-semibold my-5'>Our Inventory</h1>
+                        <div className='grid lg:grid-cols-2 gap-8 lg:px-32 my-16'>
+
+                            {
+                                products.map(product => <Product
+                                    key={product._id}
+                                    product={product}
+                                ></Product>)
+                            }
+                        </div></>
+            }
         </div>
     );
 };
