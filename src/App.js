@@ -8,6 +8,7 @@ import Home from './Components/Home/Home';
 import InvalidPage from './Components/InvalidPage/InvalidPage';
 import Inventory from './Components/Inventory/Inventory';
 import Login from './Components/Login/Login';
+import ManageInventory from './Components/ManageInventory/ManageInventory';
 import Navbar from './Components/Navbar/Navbar';
 import ProductDetail from './Components/ProductDetail/ProductDetail';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
@@ -33,6 +34,11 @@ function App() {
             <RequireAuth>
               <ProductDetail></ProductDetail>
             </RequireAuth>}></Route>
+          <Route path='/manage-inventory' element={
+            <RequireAuth>
+              <ManageInventory></ManageInventory>
+            </RequireAuth>
+          }></Route>
           <Route path='*' element={<InvalidPage></InvalidPage>}></Route>
         </Routes>
 
