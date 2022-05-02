@@ -31,10 +31,7 @@ function App() {
           <Route path='/signup' element={<Signup></Signup>}></Route>
           <Route path='/reset-password' element={<ForgetPass></ForgetPass>}></Route>
           <Route path='/inventory' element={<Inventory></Inventory>}></Route>
-          <Route path='/inventory/:productId' element={
-            <RequireAuth>
-              <ProductDetail></ProductDetail>
-            </RequireAuth>}></Route>
+          <Route path='/inventory/:productId' element={<ProductDetail></ProductDetail>}></Route>
 
           <Route path='/manage-inventory' element={
             <RequireAuth>

@@ -64,13 +64,13 @@ const HalfInventory = () => {
                     </div>
                 </div>
 
-                <Link to="/inventory">
-                    <div className='flex justify-center mt-5'>
+                <div className='flex justify-center mt-5'>
+                    <Link to="/inventory">
                         <button className="mx-auto transition duration-200 bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white px-5 py-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center">
                             Show all
                         </button>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
 
             </section>
 

@@ -15,7 +15,7 @@ const RequireAuth = ({ children }) => {
     }
 
     if (!user) {
-        toast.warning("You need to login for access the products")
+        toast.warning("You need to login for manage the products")
     }
 
     if (user) {
