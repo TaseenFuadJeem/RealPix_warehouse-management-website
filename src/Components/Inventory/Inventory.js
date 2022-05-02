@@ -27,7 +27,7 @@ const Inventory = () => {
 
                     <>
                         <h1 className='text-center text-4xl font-semibold my-5'>Our Inventory</h1>
-                        <div className='grid lg:grid-cols-2 gap-8 lg:px-32 my-16'>
+                        <div className='grid lg:grid-cols-3 gap-8 lg:px-32 my-16'>
 
                             {
                                 products.map(product => <Product
