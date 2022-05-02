@@ -25,8 +25,8 @@ const Product = ({ product }) => {
                         <p class="font-normal text-gray-700">Price : $ {price}</p>
                         <p class="font-normal text-gray-700">Seller : {seller}</p>
                         <p class="font-normal text-gray-700">Item left : {qnt}</p>
-                        <button onClick={() => navigateToServiceDetails(_id)} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
-                            Read more
+                        <button onClick={() => navigateToServiceDetails(_id)} class="text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
+                            View detail
                         </button>
                     </div>
                 </div>

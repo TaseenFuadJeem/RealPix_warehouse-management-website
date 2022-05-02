@@ -20,8 +20,9 @@ const ProductDetail = () => {
     const { img, name, price, seller, qnt, description } = product;
 
     return (
-        <div className=''>
-            <div className="flex justify-center my-40">
+        <div>
+            <h1 className='text-center text-3xl font-semibold mt-5'>Product Detail</h1>
+            <div className="flex justify-center mb-40 mt-20">
                 <div className="flex flex-col md:flex-row md:max-w-6xl border-2 rounded-lg bg-white shadow-xl">
                     <div className='flex items-center'>
                         <img className="p-3 w-full h-96 md:w-96 rounded-t-lg md:rounded-none md:rounded-l-lg" src={img} alt="" />
