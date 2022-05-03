@@ -16,6 +16,7 @@ import RequireAuth from './Components/RequireAuth/RequireAuth';
 import ScrollButton from './Components/ScrollButton/ScrollButton';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 import Signup from './Components/Signup/Signup';
+import UpdateProduct from './Components/UpdateProduct/UpdateProduct';
 
 function App() {
   return (
@@ -42,6 +43,12 @@ function App() {
           <Route path='/add-product' element={
             <RequireAuth>
               <AddProduct></AddProduct>
+            </RequireAuth>
+          }></Route>
+
+          <Route path='/update-product/:id' element={
+            <RequireAuth>
+              <UpdateProduct></UpdateProduct>
             </RequireAuth>
           }></Route>
           <Route path='*' element={<InvalidPage></InvalidPage>}></Route>
