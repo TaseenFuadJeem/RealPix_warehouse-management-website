@@ -10,6 +10,7 @@ import InvalidPage from './Components/InvalidPage/InvalidPage';
 import Inventory from './Components/Inventory/Inventory';
 import Login from './Components/Login/Login';
 import ManageInventory from './Components/ManageInventory/ManageInventory';
+import MyItem from './Components/MyItem/MyItem';
 import Navbar from './Components/Navbar/Navbar';
 import ProductDetail from './Components/ProductDetail/ProductDetail';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
@@ -49,6 +50,12 @@ function App() {
           <Route path='/update-product/:id' element={
             <RequireAuth>
               <UpdateProduct></UpdateProduct>
+            </RequireAuth>
+          }></Route>
+
+          <Route path='/my-items' element={
+            <RequireAuth>
+              <MyItem></MyItem>
             </RequireAuth>
           }></Route>
           <Route path='*' element={<InvalidPage></InvalidPage>}></Route>
