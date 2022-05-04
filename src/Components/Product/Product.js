@@ -16,7 +16,7 @@ const Product = ({ product }) => {
             <div class="max-w-lg mx-auto">
                 <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mx-auto mb-5">
 
-                    <img class="rounded-t-lg mx-auto p-4" src={img} alt="" />
+                    <img class="rounded-t-lg mx-auto p-4 w-60" src={img} alt="" />
 
                     <div class="p-5">
 
