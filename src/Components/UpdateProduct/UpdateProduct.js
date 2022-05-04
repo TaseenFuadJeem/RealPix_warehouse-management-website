@@ -53,7 +53,7 @@ const UpdateProduct = () => {
                 <div className='md:w-1/2 bg-white mx-auto border-2 rounded-xl shadow-xl p-11 mb-36 mt-20'>
                     <h1 className='text-center text-4xl font-semibold my-5 text-blue-600'>Update Product</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <label className="font-semibold text-sm text-gray-600 pb-1 block">User name</label>
+                        <label className="font-semibold text-sm text-gray-600 pb-1 block">Model name</label>
                         <input type="text" className="outline-none border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50" {...register("name", { required: false, maxLength: 10000 })} />
 
                         <label className="font-semibold text-sm text-gray-600 pb-1 block">Seller</label>
