@@ -19,9 +19,11 @@ const MyItem = () => {
 
     return (
         <div className='lg:px-32'>
-            <h1 className='text-4xl text-center my-6 font-semibold'> My Items</h1>
+            {
+                items.length === 0 ? <h1 className='text-4xl text-center my-6 font-semibold text-red-500'>Sorry!! You have not added any items yet</h1> : <h1 className='text-4xl text-center my-6 font-semibold'> My Items</h1>
+            }
 
-            <div className='grid lg:grid-cols-3 mb-48 mt-9'>
+            <div className='grid lg:grid-cols-3 mb-48 mt-9 gap-8'>
                 {
                     items.map(item => <Item
                         key={item._id}

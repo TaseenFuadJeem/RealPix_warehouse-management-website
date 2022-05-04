@@ -2,7 +2,8 @@ import React from 'react';
 
 const Item = ({ item }) => {
 
-    const { img, name, price, seller, qnt, email, description } = item
+    const { img, name, price, seller, qnt, email, description } = item;
+    console.log(name);
 
     return (
         <div>
@@ -22,7 +23,7 @@ const Item = ({ item }) => {
                         <p class="font-normal text-gray-700">Item left : {qnt}</p>
                         <p class="text-gray-400 text-sm">{email}</p>
                         <button class="text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
-                            View full detail
+                            Delete
                         </button>
                     </div>
                 </div>
