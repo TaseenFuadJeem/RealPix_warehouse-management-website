@@ -1,10 +1,13 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import auth from '../../firebase/firebase.init';
 
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
+    const [user] = useAuthState(auth)
     const navigate = useNavigate();
 
 
@@ -40,6 +43,9 @@ const AddProduct = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label className="font-semibold text-sm text-gray-600 pb-1 block">Model name</label>
                     <input type="text" className="outline-none border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50" {...register("name", { required: true, maxLength: 10000 })} />
+
+                    <label className="font-semibold text-sm text-gray-600 pb-1 block">User email</label>
+                    <input type="email" value={user.email} className="outline-none border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50" {...register("email", { required: true, maxLength: 10000 })} />
 
                     <label className="font-semibold text-sm text-gray-600 pb-1 block">Seller</label>
                     <input type="text" className="outline-none border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50" {...register("seller", { required: true, maxLength: 10000 })} />
