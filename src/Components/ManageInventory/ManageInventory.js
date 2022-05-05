@@ -4,10 +4,14 @@ import { MdAddCircle } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import LoadingPage from '../LoadingPage/LoadingPage';
 import './ManageInventory.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase/firebase.init';
+import userPhoto from '../../Assets/profile-user.png';
 
 const ManageInventory = () => {
 
     const [products, setProducts] = useState([]);
+    const [user] = useAuthState(auth);
 
     useEffect(() => {
 
@@ -31,6 +35,19 @@ const ManageInventory = () => {
 
                     <>
                         <h1 className='text-center text-4xl font-semibold my-5'>Manage Inventory</h1>
+
+                        <div className='border-2 border-black p-4 w-80 mx-auto flex justify-center rounded-xl mt-5'>
+                            <div>
+                                <p className='text-center mb-2 font-bold underline  underline-offset-4'>USER INFO</p>
+                                <div className="flex items-center mx-auto space-x-4">
+                                    <img className="w-10 h-10 rounded-full" src={user?.photoURL ? user.photoURL : userPhoto} alt="" />
+                                    <div className="space-y-1 font-medium">
+                                        <div>{user?.displayName ? user.displayName : "Unknown User"}</div>
+                                        <div className="text-sm text-gray-500">{user.email}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div className='flex justify-center'>
                             <Link to='/add-product'>

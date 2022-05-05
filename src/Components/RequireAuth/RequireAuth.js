@@ -18,7 +18,7 @@ const RequireAuth = ({ children }) => {
         toast.warning("You need to login for manage the products")
     }
 
-    if (user) {
+    if (user && user.photoURL) {
         return children;
     }
     else {

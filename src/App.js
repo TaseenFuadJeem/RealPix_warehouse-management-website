@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import AddProduct from './Components/AddProduct/AddProduct';
+import Blogs from './Components/Blogs/Blogs';
 import Footer from './Components/Footer/Footer';
 import ForgetPass from './Components/ForgetPass/ForgetPass';
 import Home from './Components/Home/Home';
@@ -34,6 +35,7 @@ function App() {
           <Route path='/reset-password' element={<ForgetPass></ForgetPass>}></Route>
           <Route path='/inventory' element={<Inventory></Inventory>}></Route>
           <Route path='/inventory/:productId' element={<ProductDetail></ProductDetail>}></Route>
+          <Route path='/blogs' element={<Blogs></Blogs>}></Route>
 
           <Route path='/manage-inventory' element={
             <RequireAuth>
