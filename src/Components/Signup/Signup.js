@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../Assets/logo.png';
 import { FcGoogle } from 'react-icons/fc';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -12,6 +12,11 @@ const Signup = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
+
     const [
         createUserWithEmailAndPassword,
         user,
@@ -24,7 +29,7 @@ const Signup = () => {
     const navigate = useNavigate();
 
     if (user || googleUser) {
-        navigate("/home");
+        navigate(from, { replace: true });
         toast.success("Your account created successfully!")
     }
 

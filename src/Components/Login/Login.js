@@ -4,7 +4,7 @@ import { FcGoogle } from 'react-icons/fc'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase/firebase.init';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import LoadingPage from '../LoadingPage/LoadingPage';
 
@@ -12,6 +12,11 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
+
     const [
         signInWithEmailAndPassword,
         user,
@@ -40,7 +45,7 @@ const Login = () => {
     }
 
     if (googleUser || user) {
-        navigate('/home');
+        navigate(from, { replace: true });
         toast.success("Login successful")
     }
 
