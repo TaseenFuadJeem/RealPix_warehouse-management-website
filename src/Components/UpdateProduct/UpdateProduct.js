@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import './UpdateProduct.css';
 
 const UpdateProduct = () => {
 
@@ -48,7 +49,7 @@ const UpdateProduct = () => {
     }
 
     return (
-        <div>
+        <div className='mobile-dev'>
             <div className='lg:px-32'>
                 <div className='md:w-1/2 bg-white mx-auto border-2 rounded-xl shadow-xl p-11 mb-36 mt-20'>
                     <h1 className='text-center text-4xl font-semibold my-5 text-blue-600'>Update Product</h1>

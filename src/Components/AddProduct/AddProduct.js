@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase/firebase.init';
+import './AddProduct.css';
 
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -37,7 +38,7 @@ const AddProduct = () => {
 
 
     return (
-        <div className='lg:px-32'>
+        <div className='lg:px-32 mobile-dev'>
             <div className='md:w-1/2 bg-white mx-auto border-2 rounded-xl shadow-xl p-11 mb-36 mt-20'>
                 <h1 className='text-center text-4xl font-semibold my-5 text-blue-600'>Add Product</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>

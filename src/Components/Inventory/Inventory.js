@@ -3,6 +3,7 @@ import Product from '../Product/Product';
 import LoadingPage from '../LoadingPage/LoadingPage';
 import { MdManageAccounts } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import './inventory.css';
 
 const Inventory = () => {
 
@@ -19,7 +20,7 @@ const Inventory = () => {
     }, [])
 
     return (
-        <div>
+        <div className='mobile-dev'>
             {
                 products.length === 0 ?
 
