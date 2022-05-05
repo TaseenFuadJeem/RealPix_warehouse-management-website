@@ -38,7 +38,7 @@ const ManageProduct = ({ product, setProducts, products }) => {
     }
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://rocky-mesa-14972.herokuapp.com/inventory/${id}`;
 
         fetch(url, {
             method: 'DELETE'

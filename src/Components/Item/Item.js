@@ -37,7 +37,7 @@ const Item = ({ item, items, setItems }) => {
     }
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/my-items/${id}`;
+        const url = `https://rocky-mesa-14972.herokuapp.com/my-items/${id}`;
 
         fetch(url, {
             method: 'DELETE'

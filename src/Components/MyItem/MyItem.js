@@ -10,7 +10,7 @@ const MyItem = () => {
 
     useEffect(() => {
         const email = user.email
-        const url = `http://localhost:5000/my-items?email=${email}`;
+        const url = `https://rocky-mesa-14972.herokuapp.com/my-items?email=${email}`;
 
         fetch(url)
             .then(res => res.json())

@@ -10,7 +10,7 @@ const Inventory = () => {
 
     useEffect(() => {
 
-        const url = "http://localhost:5000/cam";
+        const url = "https://rocky-mesa-14972.herokuapp.com/cam";
 
         fetch(url)
             .then(res => res.json())

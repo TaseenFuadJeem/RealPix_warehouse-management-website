@@ -13,7 +13,7 @@ const AddProduct = () => {
 
     const onSubmit = data => {
 
-        const url = `http://localhost:5000/cam`;
+        const url = "https://rocky-mesa-14972.herokuapp.com/cam";
 
         fetch(url, {
             method: 'POST',

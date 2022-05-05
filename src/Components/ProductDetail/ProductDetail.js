@@ -9,7 +9,7 @@ const ProductDetail = () => {
 
     useEffect(() => {
 
-        const url = `http://localhost:5000/inventory/${productId}`;
+        const url = `https://rocky-mesa-14972.herokuapp.com/inventory/${productId}`;
 
         fetch(url)
             .then(res => res.json())

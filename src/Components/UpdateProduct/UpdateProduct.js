@@ -14,7 +14,7 @@ const UpdateProduct = () => {
 
     useEffect(() => {
 
-        const url = `http://localhost:5000/update-product/${id}`;
+        const url = `https://rocky-mesa-14972.herokuapp.com/update-product/${id}`;
 
         fetch(url)
             .then(res => res.json())
@@ -25,7 +25,7 @@ const UpdateProduct = () => {
     console.log(product);
 
     const onSubmit = data => {
-        const url = `http://localhost:5000/update-product/${id}`;
+        const url = `https://rocky-mesa-14972.herokuapp.com/update-product/${id}`;
 
         fetch(url, {
             method: 'PUT',
