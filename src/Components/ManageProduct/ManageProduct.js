@@ -57,7 +57,7 @@ const ManageProduct = ({ product, setProducts, products }) => {
             <div className="max-w-lg mx-auto">
                 <div className="bg-white shadow-md border border-gray-200 rounded-lg  mb-5">
 
-                    <img className="rounded-t-lg mx-auto w-60" src={img} alt="" />
+                    <img className="rounded-t-lg mx-auto p-8 w-60" src={img} alt="" />
 
                     <div className="p-5">
 
