@@ -24,14 +24,14 @@ const MyItem = () => {
             {
                 items.length === 0 ?
 
-                    <LoadingPage></LoadingPage>
+                    <h1 className='text-4xl text-center flex items-center justify-center font-semibold h-screen text-red-500'>Sorry!! You have not added any items yet</h1>
 
                     :
 
                     <div className='lg:px-32 mobile-dev'>
-                        {
-                            items.length === 0 ? <h1 className='text-4xl text-center my-6 font-semibold text-red-500'>Sorry!! You have not added any items yet</h1> : <h1 className='text-4xl text-center my-6 font-semibold'> My Items</h1>
-                        }
+
+                        <h1 className='text-4xl text-center my-6 font-semibold'> My Items</h1>
+
 
                         <div className='grid lg:grid-cols-3 mb-48 mt-9 gap-8'>
                             {
