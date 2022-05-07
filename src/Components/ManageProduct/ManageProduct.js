@@ -72,7 +72,13 @@ const ManageProduct = ({ product, setProducts, products }) => {
             .then(result => {
                 console.log(result);
                 setQuantity(newNumQuantity);
-                toast.success("Delivery successful");
+
+                if (newNumQuantity === 0 || newNumQuantity < 0) {
+                    toast.error("Can't deliver. Product is currently out of stock");
+                } else {
+                    toast.success("Delivery successful");
+                }
+
             });
 
     }
