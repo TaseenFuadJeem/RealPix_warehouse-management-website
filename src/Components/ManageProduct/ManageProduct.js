@@ -52,10 +52,10 @@ const ManageProduct = ({ product, setProducts, products }) => {
     }
 
     const [quantity, setQuantity] = useState(qnt);
+    const numQuantity = Number(quantity);
+    let newNumQuantity = numQuantity - 1;
 
     const handleQnt = () => {
-        const numQuantity = Number(quantity);
-        setQuantity(numQuantity - 1);
 
         const url = `https://rocky-mesa-14972.herokuapp.com/update-quantity/${_id}`;
 
@@ -65,12 +65,14 @@ const ManageProduct = ({ product, setProducts, products }) => {
                 'content-type': 'application/json'
             },
             body: JSON.stringify({
-                qnt: quantity
+                qnt: newNumQuantity
             })
         })
             .then(res => res.json())
             .then(result => {
                 console.log(result);
+                setQuantity(newNumQuantity);
+                toast.success("Delivery successful");
             });
 
     }
@@ -91,7 +93,7 @@ const ManageProduct = ({ product, setProducts, products }) => {
                         <p title={description} className="font-normal text-gray-700 my-5">{description.length > 100 ? description.slice(0, 200) + "..." : description}</p>
                         <p className="font-normal">Price : $ {price}</p>
                         <p className="font-normal">Seller : {seller}</p>
-                        <p className={`font-normal ${quantity === 0 || quantity < 0 ? "text-red-600" : ""}`}>{quantity === 0 || quantity < 0 ? "Stock Out" : "Item left : " + quantity}</p>
+                        <p className={`font-normal ${newNumQuantity === 0 || newNumQuantity < 0 ? "text-red-600" : ""}`}>{newNumQuantity === 0 || newNumQuantity < 0 ? "Stock Out" : "Item left : " + newNumQuantity}</p>
                         <div className='flex justify-evenly'>
                             <Link to={`/update-product/${_id}`}>
                                 <button className="text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center">
