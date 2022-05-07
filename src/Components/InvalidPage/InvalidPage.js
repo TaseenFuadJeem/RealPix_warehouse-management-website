@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const InvalidPage = () => {
     return (
-        <div>
+        <div style={{ backgroundColor: "white" }}>
             <img className='mx-auto' src={gif} alt="" />
             <h1 className='text-center text-4xl font-bold text-red-500 mb-5'>404 ERROR!</h1>
             <h1 className='text-center text-xl'>Opps! It looks like you entered a broken page😥</h1>
