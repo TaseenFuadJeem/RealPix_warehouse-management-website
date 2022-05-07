@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MdUpdate, MdDeleteForever } from 'react-icons/md';
 import { FaShippingFast } from 'react-icons/fa';
 import Modal from 'react-modal';
@@ -51,6 +51,31 @@ const ManageProduct = ({ product, setProducts, products }) => {
             })
     }
 
+    const [quantity, setQuantity] = useState(qnt);
+
+    const handleQnt = () => {
+        const numQuantity = Number(quantity);
+        setQuantity(numQuantity - 1);
+
+        const url = `https://rocky-mesa-14972.herokuapp.com/update-quantity/${_id}`;
+
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                qnt: quantity
+            })
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            });
+
+    }
+    console.log(quantity);
+
     return (
 
         <Slide bottom>
@@ -64,9 +89,9 @@ const ManageProduct = ({ product, setProducts, products }) => {
                         <h5 className="text-gray-900 font-bold text-2xl tracking-tight mb-2">{name}</h5>
 
                         <p title={description} className="font-normal text-gray-700 my-5">{description.length > 100 ? description.slice(0, 200) + "..." : description}</p>
-                        <p className="font-normal text-gray-700">Price : $ {price}</p>
-                        <p className="font-normal text-gray-700">Seller : {seller}</p>
-                        <p className="font-normal text-gray-700">Item left : {qnt}</p>
+                        <p className="font-normal">Price : $ {price}</p>
+                        <p className="font-normal">Seller : {seller}</p>
+                        <p className={`font-normal ${quantity === 0 || quantity < 0 ? "text-red-600" : ""}`}>{quantity === 0 || quantity < 0 ? "Stock Out" : "Item left : " + quantity}</p>
                         <div className='flex justify-evenly'>
                             <Link to={`/update-product/${_id}`}>
                                 <button className="text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center">
@@ -76,7 +101,7 @@ const ManageProduct = ({ product, setProducts, products }) => {
                             <button onClick={openModal} className="text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
                                 Delete <MdDeleteForever className='text-xl ml-1' />
                             </button>
-                            <button className="text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
+                            <button onClick={() => handleQnt()} className="text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
                                 Delivered <FaShippingFast className='text-xl ml-1' />
                             </button>
 

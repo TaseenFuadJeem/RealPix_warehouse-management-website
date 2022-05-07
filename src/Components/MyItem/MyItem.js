@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase/firebase.init';
 import Item from '../Item/Item';
-import LoadingPage from '../LoadingPage/LoadingPage';
 import './MyItems.css';
 
 const MyItem = () => {

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './UpdateProduct.css';
 
 const UpdateProduct = () => {
 
     const { register, handleSubmit, reset } = useForm();
-    const navigate = useNavigate();
 
     const { id } = useParams();
 
@@ -43,8 +42,6 @@ const UpdateProduct = () => {
         reset();
 
         toast.success("Data updated successfully 😄");
-
-        navigate('/manage-inventory');
 
     }
 
